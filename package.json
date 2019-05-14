@@ -1,0 +1,7 @@
+{
+	"name"			: "biotracs-m-mzconvert",
+    "description"    : "Biotracs application for convertion mass-spectrometry raw file",
+	"dependencies"	: [
+		"biotracs-m-spectra"
+		]
+}

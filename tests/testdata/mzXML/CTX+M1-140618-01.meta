@@ -1,0 +1,494 @@
+ ==== Instrument methods for "CTX+M1-140618-01.raw" ====
+Durandal:
+      TSQ Quantum Instrument Method
+
+Creator: Quantum                   Last modified: 6/18/2014 11:54:45 AM by Quantum
+
+
+TSQ MS Method Settings:
+
+Method Type: Regular Method 
+MS Run Time (min): 20.00
+Segment                      1
+Duration (min)           20.00
+Scan Events                  2
+
+Segment 1:
+Tune Method C:\Xcalibur\methods\Tune-CTX-17062014.TSQTune
+Chrom filter: 5.0
+Q2 Gas Pressure: 1.0
+Syringe Pump: Off
+Scan Events:
+ 1: + c SRM Skimmer Offset 2, Micro Scans 1, 
+     Parent    Center    Width     Time    CE   Q1 PW  Q3 PW  Tube Lens
+     414.100   285.000    0.010    0.100   18   0.70   0.70    140
+     414.101   241.000    0.010    0.100   15   0.70   0.70    140
+     414.102   126.000    0.010    0.100   30   0.70   0.70    140
+     414.103   370.000    0.010    0.100   20   0.70   0.70    140
+     414.104   373.000    0.010    0.100   20   0.70   0.70    140
+     414.105   252.000    0.010    0.100   14   0.70   0.70    140
+     456.200   396.200    0.010    0.100   12   0.70   0.70    160
+     456.201   324.100    0.010    0.100   14   0.70   0.70    160
+     456.202   167.100    0.010    0.100   18   0.70   0.70    160
+
+ 2: + c Full Q1MS, Micro Scans 1, Scan Time 0.27, Q1 PW 0.70, [50.000-1000.000] 
+
+Syringe pump not in use
+
+Divert Valve:  not used during run
+
+
+
+Dionex Chromatography MS Link:
+
+Program for Dionex Chromatography MS Link
+
+       Sampler.TempCtrl =            On
+       Sampler.Temperature.Nominal = 16.0 [°C]
+       Sampler.Temperature.LowerLimit =  4.0 [°C]
+       Sampler.Temperature.UpperLimit =  45.0 [°C]
+       Sampler.ReadyTempDelta =      2.0 [°C]
+       ColumnOven.TempCtrl =         On
+       ColumnOven.Temperature.Nominal =  25.0 [°C]
+       ColumnOven.Temperature.LowerLimit =  5.0 [°C]
+       ColumnOven.Temperature.UpperLimit =  110.0 [°C]
+       EquilibrationTime =           0.5 [min]
+       ColumnOven.ReadyTempDelta =   1.0 [°C]
+       Cooler_TempCtrl =             Off
+       Pressure.LowerLimit =         0 [bar]
+       Pressure.UpperLimit =         700 [bar]
+       MaximumFlowRampDown =         0.998 [ml/min²]
+       MaximumFlowRampUp =           1.001 [ml/min²]
+       %A.Equate =                   "%A"
+       %B.Equate =                   "%B"
+       %C.Equate =                   "%C"
+       %D.Equate =                   "%D"
+       DrawSpeed =                   1.000 [µl/s]
+       DrawDelay =                   3000 [ms]
+       DispSpeed =                   20.000 [µl/s]
+       DispenseDelay =               0 [ms]
+       WasteSpeed =                  32.000 [µl/s]
+       SampleHeight =                1.000 [mm]
+       InjectWash =                  AfterDraw
+       WashVolume =                  600.000 [µl]
+       WashSpeed =                   20.000 [µl/s]
+       LoopWashFactor =              2.000
+       PunctureOffset =              0.0 [mm]
+       PumpDevice =                  "Pump"
+       InjectMode =                  Normal
+       Pump_Pressure.Step =          0.01 [s]
+       Pump_Pressure.Average =       Off
+
+ 0.000 Wait                          ColumnOven.Ready and Pump.Ready and Sampler.Ready and PumpModule.Ready
+       ;Chromeleon sets this property to signal to Xcalibur that it is ready to start a run.
+       ReadyToRun =                  1
+       ;Xcalibur sets this property to start the run or injection.
+       Wait                          StartRun
+       Flow =                        0.200 [ml/min]
+       %B =                          5.0 [%]
+       %C =                          0.0 [%]
+       %D =                          0.0 [%]
+       Curve =                       5
+       Wait                          ColumnOven.Ready and Pump.Ready and Sampler.Ready and PumpModule.Ready
+       Inject
+       Pump_Pressure.AcqOn
+       ;Chromeleon sets this property to signal the injection to Xcalibur.
+       InjectResponse =              1
+       ;Depending on your system configuration it might be necessary to manually insert
+       ;a "Relay" command below in order to send the start signal to the MS.
+       ;Typical syntaxes:
+       ;Pump_Relay_1.Closed  Duration = 2.00
+       ;UM3PUMP_Relay1.On    Duration = 2.00
+       Flow =                        0.200 [ml/min]
+       %B =                          5.0 [%]
+       %C =                          0.0 [%]
+       %D =                          0.0 [%]
+       Curve =                       5
+
+13.000 Flow =                        0.200 [ml/min]
+       %B =                          100.0 [%]
+       %C =                          0.0 [%]
+       %D =                          0.0 [%]
+       Curve =                       5
+
+14.000 Flow =                        0.200 [ml/min]
+       %B =                          100.0 [%]
+       %C =                          0.0 [%]
+       %D =                          0.0 [%]
+       Curve =                       5
+
+15.000 Flow =                        0.200 [ml/min]
+       %B =                          5.0 [%]
+       %C =                          0.0 [%]
+       %D =                          0.0 [%]
+       Curve =                       5
+
+20.000 Pump_Pressure.AcqOff
+       Flow =                        0.200 [ml/min]
+       %B =                          5.0 [%]
+       %C =                          0.0 [%]
+       %D =                          0.0 [%]
+       Curve =                       5
+       InjectResponse =              0
+       End
+
+
+
+ ==== 
+
+ ==== Tune data for "CTX+M1-140618-01.raw" segment 1 ====
+Tune File Name C:\Xcalibur\methods\Tune-CTX-17062014.TSQTune
+ 
+Ion Source Type HESI
+Auto Peak Width Setting YES
+ 
+Positive Polarity 
+ 
+"Q1 MS" 
+Spray Voltage 4000
+Vaporizer Temperature 75
+Sheath Gas Pressure 60
+Ion Sweep Gas Pressure 0.0
+Aux Gas Pressure 0
+Capillary Temperature 280
+Capillary Offset 35
+Tube Lens Offset [1] Mass  182.082  Value    113
+Tube Lens Offset [2] Mass  508.208  Value    162
+Tube Lens Offset [3] Mass  997.398  Value    235
+Acquisition Ma
+Q0 Q00 RF Amplitude Mass  525.000  Value    307;  Square Root
+Skimmer Offset -0
+Q00 Offset -3.0
+Lens 0 Offset -1.0
+Q0 Offset -1.4
+Lens 1-1 Offset -1.7
+Lens 1-2 Offset [1] Mass  182.082  Value  -41.3
+Lens 1-2 Offset [2] Mass  508.208  Value -126.2
+Lens 1-2 Offset [3] Mass  997.398  Value -204.6
+Q1 DC Offset [1] Mass  182.082  Value   -2.1
+Q1 DC Offset [2] Mass  508.208  Value   -2.2
+Q1 DC Offset [3] Mass  997.398  Value   -2.6
+Q1 Resolution [Man][1] Mass  182.082  Value -19.93
+Q1 Resolution [Man][2] Mass  508.208  Value -22.98
+Q1 Resolution [Man][3] Mass  997.398  Value -27.15
+Q1 Resolution [0.10][1] Mass  182.082  Value -18.99
+Q1 Resolution [0.10][2] Mass  508.208  Value -22.00
+Q1 Resolution [0.10][3] Mass  997.398  Value -26.05
+Q1 Resolution [1.00][1] Mass  182.082  Value  -9.59
+Q1 Resolution [1.00][2] Mass  508.208  Value -12.20
+Q1 Resolution [1.00][3] Mass  997.398  Value -15.09
+Q1 Calibration [Man][1] Mass  182.082  Value  -1.27
+Q1 Calibration [Man][2] Mass  508.208  Value  -1.47
+Q1 Calibration [Man][3] Mass  997.398  Value  -1.65
+Q1 Calibration [0.10][1] Mass  182.082  Value  -1.27
+Q1 Calibration [0.10][2] Mass  508.208  Value  -1.47
+Q1 Calibration [0.10][3] Mass  997.398  Value  -1.65
+Q1 Calibration [1.00][1] Mass  182.082  Value  -1.54
+Q1 Calibration [1.00][2] Mass  508.208  Value  -1.75
+Q1 Calibration [1.00][3] Mass  997.398  Value  -1.89
+Lens 2-1 Offset [1] Mass  182.082  Value  -12.0
+Lens 2-1 Offset [2] Mass  508.208  Value  -43.7
+Lens 2-1 Offset [3] Mass  997.398  Value  -91.3
+Lens 2-2 Offset -225.0
+Lens 2-3 Offset -15.0
+Q2 RF Amplitude Mass  525.000  Value    529;  Square Root
+Collision Pressure 1.0
+Q2 Offset -10
+Lens 3-1 Offset -15.0
+Lens 3-2 Offset -225.0
+Lens 3-3 Offset -15.0
+Q3 DC Bias -8.0
+Q3 RF Amplitude Mass  525.000  Value    147;  Ramp
+Ion Flight Time [1] Mass  182.089  Value  16.41
+Ion Flight Time [2] Mass  508.207  Value  13.36
+Ion Flight Time [3] Mass  997.399  Value  11.38
+Multiplier Gain 300000
+Q1 AM Calibration 0.0000
+Q3 AM Calibration 0.0000
+ 
+"Q3 MS" 
+Spray Voltage 4000
+Vaporizer Temperature 75
+Sheath Gas Pressure 60
+Ion Sweep Gas Pressure 0.0
+Aux Gas Pressure 0
+Capillary Temperature 280
+Capillary Offset 35
+Tube Lens Offset [1] Mass  182.082  Value    113
+Tube Lens Offset [2] Mass  508.208  Value    162
+Tube Lens Offset [3] Mass  997.398  Value    235
+Acquisition Ma
+Q0 Q00 RF Amplitude Mass  525.000  Value    307;  Square Root
+Skimmer Offset -0
+Q00 Offset -3.0
+Lens 0 Offset -1.0
+Q0 Offset -1.4
+Lens 1-1 Offset -1.7
+Lens 1-2 Offset -40.0
+Q1 DC Bias -8.0
+Q1 RF Amplitude Mass  525.000  Value    147;  Ramp
+Lens 2-1 Offset -15.0
+Lens 2-2 Offset -225.0
+Lens 2-3 Offset -15.0
+Q2 RF Amplitude Mass  525.000  Value    529;  Square Root
+Collision Pressure 1.0
+Q2 Offset -10
+Lens 3-1 Offset -15.0
+Lens 3-2 Offset -225.0
+Lens 3-3 Offset [1] Mass  182.082  Value  -14.1
+Lens 3-3 Offset [2] Mass  508.208  Value  -34.6
+Lens 3-3 Offset [3] Mass  997.398  Value -114.4
+Q3 DC Offset [1] Mass  182.082  Value   -2.5
+Q3 DC Offset [2] Mass  508.208  Value   -2.6
+Q3 DC Offset [3] Mass  997.398  Value   -3.9
+Q3 Resolution [Man][1] Mass  182.082  Value -18.04
+Q3 Resolution [Man][2] Mass  508.208  Value -18.42
+Q3 Resolution [Man][3] Mass  997.398  Value -18.52
+Q3 Resolution [0.10][1] Mass  182.082  Value -17.10
+Q3 Resolution [0.10][2] Mass  508.208  Value -17.42
+Q3 Resolution [0.10][3] Mass  997.398  Value -17.35
+Q3 Resolution [1.00][1] Mass  182.082  Value  -7.66
+Q3 Resolution [1.00][2] Mass  508.208  Value  -7.46
+Q3 Resolution [1.00][3] Mass  997.398  Value  -5.70
+Q3 Calibration [Man][1] Mass  182.082  Value  -1.18
+Q3 Calibration [Man][2] Mass  508.208  Value  -1.12
+Q3 Calibration [Man][3] Mass  997.398  Value  -0.91
+Q3 Calibration [0.10][1] Mass  182.082  Value  -1.18
+Q3 Calibration [0.10][2] Mass  508.208  Value  -1.12
+Q3 Calibration [0.10][3] Mass  997.398  Value  -0.91
+Q3 Calibration [1.00][1] Mass  182.082  Value  -1.45
+Q3 Calibration [1.00][2] Mass  508.208  Value  -1.33
+Q3 Calibration [1.00][3] Mass  997.398  Value  -1.17
+Ion Flight Time [1] Mass  182.089  Value  16.41
+Ion Flight Time [2] Mass  508.207  Value  13.36
+Ion Flight Time [3] Mass  997.399  Value  11.38
+Multiplier Gain 300000
+Q1 AM Calibration 0.0000
+Q3 AM Calibration 0.0000
+ 
+"MS/MS" 
+Quad MS/MS Bias -1.5
+Multiplier Gain 300000
+ 
+Negative Polarity 
+ 
+"Q1 MS" 
+Spray Voltage 4000
+Vaporizer Temperature 75
+Sheath Gas Pressure 60
+Ion Sweep Gas Pressure 0.0
+Aux Gas Pressure 0
+Capillary Temperature 280
+Capillary Offset 35
+Tube Lens Offset [1] Mass  182.082  Value    113
+Tube Lens Offset [2] Mass  508.208  Value    162
+Tube Lens Offset [3] Mass  997.398  Value    235
+Acquisition Ma
+Q0 Q00 RF Amplitude Mass  525.000  Value    307;  Square Root
+Skimmer Offset -0
+Q00 Offset -3.0
+Lens 0 Offset -1.0
+Q0 Offset -1.4
+Lens 1-1 Offset -1.7
+Lens 1-2 Offset [1] Mass  182.082  Value  -41.3
+Lens 1-2 Offset [2] Mass  508.208  Value -126.2
+Lens 1-2 Offset [3] Mass  997.398  Value -204.6
+Q1 DC Offset [1] Mass  182.082  Value   -2.1
+Q1 DC Offset [2] Mass  508.208  Value   -2.2
+Q1 DC Offset [3] Mass  997.398  Value   -2.6
+Q1 Resolution [Man][1] Mass  182.082  Value -19.93
+Q1 Resolution [Man][2] Mass  508.208  Value -22.98
+Q1 Resolution [Man][3] Mass  997.398  Value -27.15
+Q1 Resolution [0.10][1] Mass  182.082  Value -18.99
+Q1 Resolution [0.10][2] Mass  508.208  Value -22.00
+Q1 Resolution [0.10][3] Mass  997.398  Value -26.05
+Q1 Resolution [1.00][1] Mass  182.082  Value  -9.59
+Q1 Resolution [1.00][2] Mass  508.208  Value -12.20
+Q1 Resolution [1.00][3] Mass  997.398  Value -15.09
+Q1 Calibration [Man][1] Mass  182.082  Value  -1.27
+Q1 Calibration [Man][2] Mass  508.208  Value  -1.47
+Q1 Calibration [Man][3] Mass  997.398  Value  -1.65
+Q1 Calibration [0.10][1] Mass  182.082  Value  -1.27
+Q1 Calibration [0.10][2] Mass  508.208  Value  -1.47
+Q1 Calibration [0.10][3] Mass  997.398  Value  -1.65
+Q1 Calibration [1.00][1] Mass  182.082  Value  -1.54
+Q1 Calibration [1.00][2] Mass  508.208  Value  -1.75
+Q1 Calibration [1.00][3] Mass  997.398  Value  -1.89
+Lens 2-1 Offset [1] Mass  182.082  Value  -12.0
+Lens 2-1 Offset [2] Mass  508.208  Value  -43.7
+Lens 2-1 Offset [3] Mass  997.398  Value  -91.3
+Lens 2-2 Offset -225.0
+Lens 2-3 Offset -15.0
+Q2 RF Amplitude Mass  525.000  Value    529;  Square Root
+Collision Pressure 1.0
+Q2 Offset -10
+Lens 3-1 Offset -15.0
+Lens 3-2 Offset -225.0
+Lens 3-3 Offset -15.0
+Q3 DC Bias -8.0
+Q3 RF Amplitude Mass  525.000  Value    147;  Ramp
+Ion Flight Time [1] Mass  182.089  Value  16.41
+Ion Flight Time [2] Mass  508.207  Value  13.36
+Ion Flight Time [3] Mass  997.399  Value  11.38
+Multiplier Gain 300000
+Q1 AM Calibration 0.0000
+Q3 AM Calibration 0.0000
+ 
+"Q3 MS" 
+Spray Voltage 4000
+Vaporizer Temperature 75
+Sheath Gas Pressure 60
+Ion Sweep Gas Pressure 0.0
+Aux Gas Pressure 0
+Capillary Temperature 280
+Capillary Offset 35
+Tube Lens Offset [1] Mass  182.082  Value    113
+Tube Lens Offset [2] Mass  508.208  Value    162
+Tube Lens Offset [3] Mass  997.398  Value    235
+Acquisition Ma
+Q0 Q00 RF Amplitude Mass  525.000  Value    307;  Square Root
+Skimmer Offset -0
+Q00 Offset -3.0
+Lens 0 Offset -1.0
+Q0 Offset -1.4
+Lens 1-1 Offset -1.7
+Lens 1-2 Offset -40.0
+Q1 DC Bias -8.0
+Q1 RF Amplitude Mass  525.000  Value    147;  Ramp
+Lens 2-1 Offset -15.0
+Lens 2-2 Offset -225.0
+Lens 2-3 Offset -15.0
+Q2 RF Amplitude Mass  525.000  Value    529;  Square Root
+Collision Pressure 1.0
+Q2 Offset -10
+Lens 3-1 Offset -15.0
+Lens 3-2 Offset -225.0
+Lens 3-3 Offset [1] Mass  182.082  Value  -14.1
+Lens 3-3 Offset [2] Mass  508.208  Value  -34.6
+Lens 3-3 Offset [3] Mass  997.398  Value -114.4
+Q3 DC Offset [1] Mass  182.082  Value   -2.5
+Q3 DC Offset [2] Mass  508.208  Value   -2.6
+Q3 DC Offset [3] Mass  997.398  Value   -3.9
+Q3 Resolution [Man][1] Mass  182.082  Value -18.04
+Q3 Resolution [Man][2] Mass  508.208  Value -18.42
+Q3 Resolution [Man][3] Mass  997.398  Value -18.52
+Q3 Resolution [0.10][1] Mass  182.082  Value -17.10
+Q3 Resolution [0.10][2] Mass  508.208  Value -17.42
+Q3 Resolution [0.10][3] Mass  997.398  Value -17.35
+Q3 Resolution [1.00][1] Mass  182.082  Value  -7.66
+Q3 Resolution [1.00][2] Mass  508.208  Value  -7.46
+Q3 Resolution [1.00][3] Mass  997.398  Value  -5.70
+Q3 Calibration [Man][1] Mass  182.082  Value  -1.18
+Q3 Calibration [Man][2] Mass  508.208  Value  -1.12
+Q3 Calibration [Man][3] Mass  997.398  Value  -0.91
+Q3 Calibration [0.10][1] Mass  182.082  Value  -1.18
+Q3 Calibration [0.10][2] Mass  508.208  Value  -1.12
+Q3 Calibration [0.10][3] Mass  997.398  Value  -0.91
+Q3 Calibration [1.00][1] Mass  182.082  Value  -1.45
+Q3 Calibration [1.00][2] Mass  508.208  Value  -1.33
+Q3 Calibration [1.00][3] Mass  997.398  Value  -1.17
+Ion Flight Time [1] Mass  182.089  Value  16.41
+Ion Flight Time [2] Mass  508.207  Value  13.36
+Ion Flight Time [3] Mass  997.399  Value  11.38
+Multiplier Gain 300000
+Q1 AM Calibration 0.0000
+Q3 AM Calibration 0.0000
+ 
+"MS/MS" 
+Quad MS/MS Bias -1.5
+Multiplier Gain 300000
+ 
+Global Parameters 
+ 
+Spike Limit Threshold 1200
+Spike Filter Factor 20
+Fragment Threshold (Centroid) 0
+Merge (%Peakwidth for Centroid) 85
+Maximum Fragment Width (%Peakwidth) 300
+Minimum Area (Centroid) 1
+Minimum Fragment Width (%Peakwidth) 20
+Zero (0 = Automatic) 0
+Merge Increment per AMU 0.0001
+Pulse Count Threshold 20000
+Auto Zero Threshold 20000
+Baseline Squelch 0.001
+Scale Factor 1
+ADC Sampling Rate 191958
+Samples Per PW (Double for AM) 10
+Minimum Settling Time (Double for AM) 0.002
+Post Scan Time (Double for AM) 0.0008
+Time taken to switch polarity 0.025
+Group Delay Time (uSec) 760
+DC Delay Time (uSec) -100
+Q1 Mass Correction (AMU/Degree) 0.008
+Q3 Mass Correction (AMU/Degree) 0.012
+Q1 Resolution Correction (AMU/Degree) -0.008
+Q3 Resolution Correction (AMU/Degree) -0.01
+Q1 Rod Polarity (0 or 1) 1
+Q3 Rod Polarity (0 or 1) 0
+Q1 DC Disabled (0 or 1) 0
+Q3 DC Disabled (0 or 1) 0
+Gain Parameter A 58.2265
+Gain Parameter B 0.00975071
+Calibrated System Last Mass 1549.95
+FAIMS Ion Residence (sec) 0.1
+FAIMS Barometric Pressure (Torr) 760
+FAIMS Electrodes Spacing (mm) 2.5
+Thermal Hat Temperature Slope 0.012207
+Thermal Hat Temperature Intercept -273.15
+Q1 Det. Diode Temperature Slope 0.012207
+Q1 Det. Diode Temperature Intercept -273.15
+Q3 Det. Diode Temperature Slope 0.012207
+Q3 Det. Diode Temperature Intercept -273.15
+CID Cell Torr Slope 1.525e-005
+CID Cell Torr Intercept -0.0121309
+Vaporizer Temperature Slope 0.0305
+Vaporizer Temperature Intercept -10
+Capillary Temperature Slope 0.0310625
+Capillary Temperature Intercept -285.8
+Ion Gauge Pressure Slope 0.000305
+Ion Gauge Pressure Intercept 0
+Sheath Gas Pressure Slope -0.00835821
+Sheath Gas Pressure Intercept 13.1558
+Aux Gas Pressure Slope -0.0103774
+Aux Gas Pressure Intercept 20.4434
+Ion Sweep Gas Pressure Slope -0.0117546
+Ion Sweep Gas Pressure Intercept 28.1759
+ ==== 
+
+ ==== Sample/file/header information for "CTX+M1-140618-01.raw" ====
+SeqRowInjectionVolume: 10
+SeqRowDilutionFactor: 1
+MassResolution: 0.5
+ExpectedRunTime: 20
+LowMass: 50
+HighMass: 1000
+StartTime: 0.0040333336219191551
+EndTime: 20.004483333333333
+MaxIntegratedIntensity: 139935648
+VersionNumber: 66
+NumberOfControllers: 2
+NumSpectra: 9510
+NumStatusLog: 492
+NumTuneData: 1
+NumTrailerExtra: 9510
+FirstSpectrumNumber: 1
+LastSpectrumNumber: 9510
+NumInstMethods: 2
+IsThereMSData: 1
+HasExpMethod: 1
+FilterMassPrecision: 3
+FileName: C:\DATA\mes documents\Working Home\6. Workspace\raw tests data\Metadata extraction\CTX+M1-140618-01.raw
+CreatorID: Quantum
+SeqRowDataPath: C:\XCALIBUR\DATA\DACCAR\140618
+SeqRowRawFileName: C:\XCALIBUR\DATA\DACCAR\140618\CTX+M1-140618-01.raw
+SeqRowSampleID: 1
+SeqRowComment: CTX+M1 1ug/ml dilue 1000
+SeqRowInstrumentMethod: C:\Xcalibur\methods\DACCAR.meth
+SeqRowVial: RA3
+InstName: TSQ
+InstModel: TSQ Quantum Ultra
+InstSoftwareVersion: 2.3.0.1214 SP3
+InstHardwareVersion: PowerPC V2.20, Acq DSP V2.01, Scan DSP V2.00
+ ==== 
+
