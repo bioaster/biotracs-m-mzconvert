@@ -1,15 +1,15 @@
-# Biotracs-mzconvert application
+# BioTracs MzConvert application
 
-The biotracs-mzconvert application allows to convert raw mass-spectrometry data to standard file formats. Is is a wrapper of the ProteoWizard application in the biotracs environment.
+The `biotracs-m-mzconvert` application allows to convert raw mass-spectrometry data to standard file formats. Is is a MATLAB wrapper of the ProteoWizard.
 
-# Learn more about the biotracs project
+# Learn more about the BioTracs project
 
-To learn more about the biotracs project, please refers to https://github.com/bioaster/biotracs
+To learn more about the BioTracs project, please refers to https://github.com/bioaster/biotracs
 
 # Usage
 
-Please refer to the documentation at https://github.com/bioaster/biotracs
+Please refer to the documentation at https://bioaster.github.io/biotracs/documentation
 
 # License
 
-BIOASTER License
+BIOASTER license https://github.com/bioaster/biotracs/blob/master/LICENSE

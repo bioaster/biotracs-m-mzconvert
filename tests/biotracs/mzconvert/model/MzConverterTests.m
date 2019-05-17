@@ -4,7 +4,7 @@ classdef MzConverterTests < matlab.unittest.TestCase
     end
     
     properties
-        workingDir = fullfile(biotracs.core.env.Env.workingDir(), '/mzconvert/MzConverterTests');
+        workingDir = fullfile(biotracs.core.env.Env.workingDir(), '/biotracs/mzconvert/MzConverterTests');
     end
 
     methods (Test)
