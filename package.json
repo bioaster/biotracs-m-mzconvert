@@ -1,7 +1,11 @@
 {
 	"name"			: "biotracs-m-mzconvert",
     "description"    : "Biotracs application for convertion mass-spectrometry raw file",
-	"dependencies"	: [
+    "dependencies"	: [
+        "biotracs-m-mzconvert",
 		"biotracs-m-spectra"
-		]
+	],
+    "variables" : {
+        "MzConvertFilePath" : "C:/Program Files/ProteoWizard/ProteoWizard 3.0.9992/msconvert.exe"
+    }
 }
