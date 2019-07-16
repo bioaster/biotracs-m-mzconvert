@@ -27,7 +27,7 @@ classdef ConverterConfig < biotracs.core.shell.model.ShellConfig
 				this@biotracs.core.shell.model.ShellConfig( );
                 this.updateParamValue('ExecutableFilePath', biotracs.core.env.Env.vars('MzConvertFilePath'));
                 this.createParam('CompressOutputFiles', false, 'Constraint', biotracs.core.constraint.IsBoolean());
-                this.createParam('OutputFormat','mzXML', 'Constraint', biotracs.core.constraint.IsInSet({'mzXML', 'mzML', 'mgf', 'ms2'}));
+                this.createParam('OutputFormat','mzXML', 'Constraint', biotracs.core.constraint.IsInSet({'mzXML', 'mzML', 'mgf', 'ms2', 'ms1'}));
                 this.createParam('OutputFileName','', 'Constraint', biotracs.core.constraint.IsText());
 %                 this.createParam('PeackPicking', true, 'Constraint', biotracs.core.constraint.IsBoolean());
                 this.createParam('PeackPicking', 'vendor', 'Constraint', biotracs.core.constraint.IsInSet({'vendor', 'cwt'}));
