@@ -6,6 +6,6 @@
 		"biotracs-m-spectra"
 	],
     "variables" : {
-        "MzConvertFilePath" : "C:/Program Files/ProteoWizard/ProteoWizard 3.0.9992/msconvert.exe"
+        "MzConvertFilePath" : "C:/Program Files/ProteoWizard/ProteoWizard 3.0.19347.6cc5af3fe/msconvert.exe"
     }
 }

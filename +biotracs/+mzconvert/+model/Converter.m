@@ -16,6 +16,8 @@ classdef Converter < biotracs.core.shell.model.Shell
         
         % Constructor
         function this = Converter()
+            %#function biotracs.mzconvert.model.ConverterConfig biotracs.data.model.DataFileSet
+            
             this@biotracs.core.shell.model.Shell();
             this.configType = 'biotracs.mzconvert.model.ConverterConfig';
             
